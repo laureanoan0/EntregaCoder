@@ -1,0 +1,28 @@
+{
+  "name": "entregacoder",
+  "version": "1.0.0",
+  "description": "Entrega numero 1 - Amadeo Meyer",
+  "homepage": "https://github.com/laureanoan0/EntregaCoder#readme",
+  "bugs": {
+    "url": "https://github.com/laureanoan0/EntregaCoder/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laureanoan0/EntregaCoder.git"
+  },
+  "license": "MIT",
+  "author": "Amadeo",
+  "type": "commonjs",
+  "main": "api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node api.js",
+    "dev": "nodemon api.js"
+  },
+    "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "3.1.10"
+  }
+}
