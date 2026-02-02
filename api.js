@@ -17,12 +17,12 @@ app.get('/', (req, res)=>{
 });
 
 //Get de productos
-app.get('/api/productos/', (req, res)=>{
+app.get('/api/products/', (req, res)=>{
     res.status(200).json(productsData.productos)
 });
 
 //Get por id
-app.get('/api/productos/:id', (req, res)=>{
+app.get('/api/products/:id', (req, res)=>{
     const id = parseInt(req.params.id);
     console.log("ID consultado: ", id);
     const productoSolicitado = productsData.productos.find(p => p.id === id);
@@ -34,7 +34,7 @@ app.get('/api/productos/:id', (req, res)=>{
 });
 
 //Push
-app.post('/api/productos', (req,res) =>{
+app.post('/api/products', (req,res) =>{
     const{ title, description, code, price, status, stock, category, thumbnails} = req.body;
     const nuevoProducto = { 
         id: productsData.productos.length ? productsData.productos[productsData.productos.length - 1].id + 1 : 1,
@@ -58,7 +58,7 @@ app.post('/api/productos', (req,res) =>{
 })
 
 //Actualizar 
-app.put('/api/productos/:id', (req, res)=>{
+app.put('/api/products/:id', (req, res)=>{
     const id = parseInt(req.params.id);
     const { title, description, code, price, status, stock, category, thumbnails } = req.body
     console.log("ID consultado: ", id);
@@ -90,7 +90,7 @@ app.put('/api/productos/:id', (req, res)=>{
 });
 
 //Borrar por id
-app.delete('/api/productos/:id', (req, res)=>{
+app.delete('/api/products/:id', (req, res)=>{
     const id = parseInt(req.params.id);
     const productoSolicitado = productsData.productos.find(p => p.id === id);
 
@@ -131,7 +131,7 @@ app.get('/api/carts/:cid', (req, res)=>{
     const cid = parseInt(req.params.cid);
     console.log("ID de carrito consultado: ", cid);
 
-    const carritoSolicitado = cartData.carts.find(p => p.cid === cid);
+    const carritoSolicitado = cartData.carts.find(p => p.id === cid);
     if(!carritoSolicitado){
         return res.status(404).json({error: "Carrito inexistente"});
     }
