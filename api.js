@@ -111,19 +111,11 @@ app.delete('/api/productos/:id', (req, res)=>{
 
 //Carrito
 app.post('/api/carts', (req,res) =>{
-    const{ prodRef} = req.body;
     const nuevoCart = { 
-        id: cartData.carts.length ? cartData.cart[cartData.cart.length - 1].id + 1 : 1,
-        
-        prodRef
+        id: cartData.carts.length ? cartData.carts[cartData.cart.length - 1].id + 1 : 1,
+        prodRef: []
     };
-
-    const productoSolicitado = productsData.productos.find(p => p.id === id);
-    if(!productoSolicitado){
-        return res.status(404).json({error: "Producto no encontrado"});
-    }
-    else
-    {
+    
         cartData.carts.push(nuevoCart);
         fs.writeFileSync(
         'cart.json',
@@ -131,7 +123,7 @@ app.post('/api/carts', (req,res) =>{
         'utf-8'
     );
     
-}
+
 res.status(201).json({message: "Carrito creado"});   
 })
 
