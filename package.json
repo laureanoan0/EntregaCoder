@@ -19,7 +19,7 @@
     "start": "node api.js",
     "dev": "nodemon api.js"
   },
-    "dependencies": {
+  "dependencies": {
     "express": "^5.2.1"
   },
   "devDependencies": {

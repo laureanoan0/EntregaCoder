@@ -1,0 +1,14 @@
+{
+    "productos" :[
+    {   "id": 1,
+        "title": "Teclado",
+        "description": "Teclado Gamer",
+        "code": "00001", 
+        "price": 50000,
+        "status": true, 
+        "stock": 10,
+        "category": "Periferico",
+        "thumbnails":""
+    }
+    ]
+}
