@@ -12,15 +12,19 @@
   },
   "license": "MIT",
   "author": "Amadeo",
-  "type": "commonjs",
-  "main": "api.js",
+  "type": "module",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node api.js",
-    "dev": "nodemon api.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "dependencies": {
-    "express": "^5.2.1"
+    "bootstrap": "5.3.8",
+    "express": "^5.2.1",
+    "express-handlebars": "8.0.6",
+    "multer": "2.1.0",
+    "socket.io": "^4.8.3"
   },
   "devDependencies": {
     "nodemon": "3.1.10"

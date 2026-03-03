@@ -1,0 +1,19 @@
+<h1>Lista de Productos</h1>
+
+{{#if products.length}}
+  {{#each products}}
+    <div>
+      <strong>ID:</strong>
+      {{this.id}}
+      |
+      <strong>{{this.title}}</strong>
+      - ${{this.price}}
+    </div>
+  {{/each}}
+{{else}}
+  <p>No hay productos cargados.</p>
+{{/if}}
+
+<hr />
+
+<a href="/realtimeproducts">Ir a productos en tiempo real</a>
